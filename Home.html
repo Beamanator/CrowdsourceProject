@@ -1,21 +1,37 @@
 <html>
-
+<!-- if we want this
+<meta http-equiv="refresh" content="10(time to refresh)"> 
+-->
 <head>
-<title>User Home Page</title>
-
-<!-- banner block -->
 <script>
-var x = screen.width
+//Dynamic Banner
+	function setContPos() {
+		//get client screen resolution
+		var docWidth = document.body.clientWidth;
+		document.write(docWidth + ": Doc Width");
+		var docHeight = document.body.clientHeight;
+		document.write(docHeight + ": Doc Height");
+		//set image size to suit your needs
+		//percentage based
+		var elWidth = docWidth*.99 ;
+		var elHeight = 200;
+		//set position of the image
+		var leftPos = (docWidth-elWidth)/2;
+		var topPos = (docHeight-elHeight)/2;
+		//setting up everything in your workspace
+		document.getElementById('Banner').style.left=leftPos;
+		document.getElementById('Banner').style.top=topPos;
+		document.getElementById('Banner').style.width=elWidth;
+		document.getElementById('Banner').style.height=elHeight;
+	}
 </script>
-<img id="Banner"  src="banner1.jpg" alt="Banner" width=x height="200">
+<img id="Banner"  src="banner.jpg">
+<title>User Home Page</title>
+<script>
+setContPos();
+</script>
 </head>
 <!-- end banner block -->
-
-
-<script> 
-//User info get// 
-var profilename = user.getInfo()  + "User profile" 
-</script>	
 -<body>
 -<h1>Me</h1>
 -  <table border="0">
