@@ -1,16 +1,16 @@
 <html>
-<!-- if we want this
-<meta http-equiv="refresh" content="10(time to refresh)"> 
--->
 <head>
-<script>
-//Dynamic Banner
+  <title>User Home Page</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
+  <img id="Banner"  src="banner.jpg">
+  <script>
+	//Dynamic Banner
 	function setContPos() {
 		//get client screen resolution
 		var docWidth = document.body.clientWidth;
-		document.write(docWidth + ": Doc Width");
+		//document.write(docWidth + ": Doc Width");
 		var docHeight = document.body.clientHeight;
-		document.write(docHeight + ": Doc Height");
+		//document.write(docHeight + ": Doc Height");
 		//set image size to suit your needs
 		//percentage based
 		var elWidth = docWidth*.99 ;
@@ -24,21 +24,34 @@
 		document.getElementById('Banner').style.width=elWidth;
 		document.getElementById('Banner').style.height=elHeight;
 	}
-</script>
-<img id="Banner"  src="banner.jpg">
-<title>User Home Page</title>
-<script>
-setContPos();
+	setContPos();
 </script>
 </head>
-<!-- end banner block -->
--<body>
--<h1>Me</h1>
--  <table border="0">
--    <tr>Contact Us</tr>
--    <tr>F.A.Q.</tr>
--    <tr>About Us</tr>
--  </table>
--</body>
+<body>
+<h1>Me</h1>
 
+	<table class="user_events">
+		<tr>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Time</th>
+			<th>Location</th>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+	<br>
+  <table class = "footer_table">
+    <tr>
+		<th>Contact Us</th>
+		<th>F.A.Q.</th>
+		<th>About Us</th>
+	</tr>
+  </table>
+</body>
 </html>
