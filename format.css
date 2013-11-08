@@ -1,0 +1,50 @@
+/* calendar css file */
+footer{
+  width:100%;
+  text-align: center;
+  display:inline;
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#button-next {
+  margin: 20px;
+  float:right;
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+#button-prev {
+  margin: 20px;
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+
+td {
+  text-align: left;
+  width:100px;
+  height: 200px;
+}
+
+th {
+  text-align: center;
+}
+
+div.container {
+  text-align: center;
+  width:98%;
+  margin:1%;
+}
+
+table.calendar {
+  text-align:center; 
+  margin-left:auto; 
+  margin-right:auto; 
+  width:700px;
+}
+
+tr{text-align:left;}

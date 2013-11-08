@@ -1,13 +1,70 @@
 <html>
 <head>
   <title>Calendar</title>
+  <link rel="stylesheet" type="text/css" href="format.css">
 </head>
 <body>
-<h1>Calendar</h1>
-  <table border="0">
-    <tr>Contact Us</tr>
-    <tr>F.A.Q.</tr>
-    <tr>About Us</tr>
-  </table>
+  <h1>My Calendar</h1>
+
+  <!-- Banner 
+  here
+  somewhere -->
+
+  <div class="button-div">
+    <button type="button" id="button-prev">Prev 2</button>
+    <button type="button" id="button-next">Next 2</button>
+  </div>
+
+  <div class="container">
+    <h3>Events This Week:</h3>
+    <table class="calendar" border="1">
+      <tr class="days">
+        <th>Sunday</td>
+        <th>Monday</td>
+        <th>Tuesday</td>
+        <th>Wednesday</td>
+        <th>Thursday</td>
+        <th>Friday</td>
+        <th>Saturday</td>
+      </tr>
+      <tr id="events-this-week">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="container">
+    <h3>Next Week's Events:</h3>
+    <table class="calendar" border="1">
+      <tr class="days">
+        <th>Sunday</td>
+        <th>Monday</td>
+        <th>Tuesday</td>
+        <th>Wednesday</td>
+        <th>Thursday</td>
+        <th>Friday</td>
+        <th>Saturday</td>
+      </tr>
+      <tr id="events-next-week">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <footer>
+    <p><a href="">Contact Us</a>&emsp;-&emsp;<a href="">F.A.Q.</a>&emsp;-&emsp;<a href="">About Us</a></p>
+  </footer>
 </body>
 </html>
