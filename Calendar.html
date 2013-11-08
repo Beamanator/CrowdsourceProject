@@ -16,31 +16,31 @@
   </div>
 
   <div class="container">
-    <h3>Events This Week:</h3>
+    <h3 id="this-week-table-title">Events This Week</h3>
     <table class="calendar" border="1">
       <tr class="days">
-        <th>Sunday</td>
-        <th>Monday</td>
-        <th>Tuesday</td>
-        <th>Wednesday</td>
-        <th>Thursday</td>
-        <th>Friday</td>
-        <th>Saturday</td>
+        <th class="0">Sunday</td>
+        <th class="1">Monday</td>
+        <th class="2">Tuesday</td>
+        <th class="3">Wednesday</td>
+        <th class="4">Thursday</td>
+        <th class="5">Friday</td>
+        <th class="6">Saturday</td>
       </tr>
       <tr id="events-this-week">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="0"></td>
+        <td class="1"></td>
+        <td class="2"></td>
+        <td class="3"></td>
+        <td class="4"></td>
+        <td class="5"></td>
+        <td class="6"></td>
       </tr>
     </table>
   </div>
 
   <div class="container">
-    <h3>Next Week's Events:</h3>
+    <h3 id="next-week-table-title">Next Week's Events</h3>
     <table class="calendar" border="1">
       <tr class="days">
         <th>Sunday</td>
@@ -62,6 +62,35 @@
       </tr>
     </table>
   </div>
+
+  <script>
+    var today = new Date();
+    var dayIndex = today.getDay().toString();
+    var column = document.getElementsByClassName(dayIndex);
+    var month = today.getMonth()+1;
+    var title1 = document.getElementById("this-week-table-title");
+    var title2 = document.getElementById("next-week-table-title");
+
+    function setColStyle(column, color) {
+      column[0].style.background = color;
+      column[1].style.background = color;
+    }
+
+    function updateTableTitles() {
+      // This logic doesn't account for changing months!!!!!!!!!!!!!!!!
+      var dayOfWeek = today.getDate();
+      var firstDay = dayOfWeek - dayIndex;
+      var lastDay = firstDay + 6;
+      var message1 = " ("+month+"/"+firstDay+" - "+month+"/"+lastDay+")";
+      title1.innerHTML += message1;
+      var message2 = " ("+month+"/"+(firstDay+7)+" - "+month+"/"+(lastDay+7)+")";
+      title2.innerHTML += message2;
+    }
+
+    setColStyle(column,"#74DF00");
+    updateTableTitles();
+    debugger;
+  </script>
 
   <footer>
     <p><a href="">Contact Us</a>&emsp;-&emsp;<a href="">F.A.Q.</a>&emsp;-&emsp;<a href="">About Us</a></p>
