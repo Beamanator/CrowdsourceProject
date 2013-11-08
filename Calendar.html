@@ -43,22 +43,22 @@
     <h3 id="next-week-table-title">Next Week's Events</h3>
     <table class="calendar" border="1">
       <tr class="days">
-        <th>Sunday</td>
-        <th>Monday</td>
-        <th>Tuesday</td>
-        <th>Wednesday</td>
-        <th>Thursday</td>
-        <th>Friday</td>
-        <th>Saturday</td>
+        <th class="7">Sunday</td>
+        <th class="8">Monday</td>
+        <th class="9">Tuesday</td>
+        <th class="10">Wednesday</td>
+        <th class="11">Thursday</td>
+        <th class="12">Friday</td>
+        <th class="13">Saturday</td>
       </tr>
       <tr id="events-next-week">
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td class="7"></td>
+        <td class="8"></td>
+        <td class="9"></td>
+        <td class="10"></td>
+        <td class="11"></td>
+        <td class="12"></td>
+        <td class="13"></td>
       </tr>
     </table>
   </div>
@@ -87,9 +87,14 @@
       title2.innerHTML += message2;
     }
 
+    function testAddData(){
+      table1 = document.getElementsByClassName("calendar")[0];
+      debugger;
+    }
+
     setColStyle(column,"#74DF00");
     updateTableTitles();
-    debugger;
+    testAddData();
   </script>
 
   <footer>
