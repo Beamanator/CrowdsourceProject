@@ -6,7 +6,7 @@
 <body>
 
 	<?php
-		@ $db = new mysqli('localhost', 'root', '', 'test');
+		@ $db = new mysqli('localhost', 'root', 'csica23', 'test');
 		if (mysqli_connect_errno()) {
 			echo 'Error: Database connection. Try again later.';
 			exit;
