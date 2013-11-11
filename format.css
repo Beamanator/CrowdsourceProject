@@ -70,6 +70,7 @@ table.calendar {
 }
 
 table.calendar td {
+  vertical-align: top;
   text-align: left;
   width:100px;
   height: 200px;
@@ -81,4 +82,8 @@ table.calendar th {
 
 table.calendar tr{
 	text-align:left;
+}
+
+table.calendar div.testEvent{
+  background-color: "red";
 }
