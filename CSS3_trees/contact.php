@@ -26,8 +26,8 @@
           <ul class="sf-menu" id="nav">
             <li><a href="index.html">Home</a></li>
             <li><a href="examples.html">Examples</a></li>
-            <li><a href="page.html">A Page</a></li>
-            <li><a href="another_page.html">Another Page</a></li>
+            <li><a href="my_calendar.html">My Calendar</a></li>
+            <li><a href="about_us.html">About Us</a></li>
             <li><a href="#">Example Drop Down</a>
               <ul>
                 <li><a href="#">Drop Down One</a></li>
@@ -137,7 +137,7 @@
     </div>
     <footer>
       <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="my_calendar.html">My Calendar</a> | <a href="about_us.html">About</a> | <a href="contact.php">Contact Us</a></p>
       <p>Copyright &copy; CSS3_trees | <a href="http://www.heartinternet.co.uk/web-hosting/">Web hosting</a> | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
     </footer>
   </div>

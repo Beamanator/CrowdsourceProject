@@ -20,8 +20,8 @@ our My Calendar page. -->
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">CCS3<span class="logo_colour">_trees</span></a></h1>
-          <h2>Simple. Contemporary. Website Template.</h2>
+          <!-- <h1><a href="index.html">CCS3<span class="logo_colour">_trees</span></a></h1>
+          <h2>Simple. Contemporary. Website Template.</h2> -->
         </div>
       </div>
       <nav>
@@ -30,7 +30,7 @@ our My Calendar page. -->
             <li><a href="index.html">Home</a></li>
             <li><a href="examples.html">Examples</a></li>
             <li><a href="my_calendar.html">My Calendar</a></li>
-            <li><a href="another_page.html">Another Page</a></li>
+            <li><a href="about_us.html">About Us</a></li>
             <li><a href="#">Example Drop Down</a>
               <ul>
                 <li><a href="#">Drop Down One</a></li>
@@ -132,7 +132,7 @@ our My Calendar page. -->
     </div>
     <footer>
       <p><img src="images/twitter.png" alt="twitter" />&nbsp;<img src="images/facebook.png" alt="facebook" />&nbsp;<img src="images/rss.png" alt="rss" /></p>
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="my_calendar.html">My Calendar</a> | <a href="another_page.html">Another Page</a> | <a href="contact.php">Contact Us</a></p>
+      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="my_calendar.html">My Calendar</a> | <a href="about_us.html">About</a> | <a href="contact.php">Contact Us</a></p>
       <p>Copyright &copy; CSS3_trees | <a href="http://www.heartinternet.co.uk/web-hosting/">Web hosting</a> | <a href="http://www.css3templates.co.uk">design from css3templates.co.uk</a></p>
     </footer>
   </div>
@@ -182,27 +182,29 @@ our My Calendar page. -->
       table1 = document.getElementsByClassName("calendar")[0];
       cell = document.getElementsByClassName("3")[1];
       cell.innerHTML+='<div class="testEvent">'+
-        '<a href="#" onclick="createAlert(cell)">Event 1</br>Time</br>#People</a>'+
+        '<a href="#" onclick="createAlert(cell, 1)">Event 1</br>Time</br>#People1</a>'+
       '</div>';
       cell.innerHTML+='<div class="testEvent">'+
-        '<a href="#" onclick="createAlert(cell)"">Event 2</br>Time2</br>#Peoples</a>'+
+        '<a href="#" onclick="createAlert(cell, 2)"">Event 2</br>Time3</br>#Peoples2</a>'+
       '</div>';
       cell.innerHTML+='<div class="testEvent">'+
-        '<a href="#" onclick="createAlert(cell)"">Event 2</br>Time2</br>#Peoples</a>'+
+        '<a href="#" onclick="createAlert(cell, 3)"">Event 3</br>Time3</br>#Peoples3</a>'+
       '</div>';
       cell.innerHTML+='<div class="testEvent">'+
-        '<a href="#" onclick="createAlert(cell)"">Event 2</br>Time2</br>#Peoples</a>'+
+        '<a href="#" onclick="createAlert(cell, 4)"">Event 4</br>Time4</br>#Peoples4</a>'+
       '</div>';
       cell.innerHTML+='<div class="testEvent">'+
-        '<a href="#" onclick="createAlert(cell)"">Event 2</br>Time2</br>#Peoples</a>'+
+        '<a href="#" onclick="createAlert(cell, 5)"">Event 5</br>Time5</br>#Peoples5</a>'+
       '</div>';
       events = document.getElementsByClassName("testEvent");
       formatTestEvent(events);
     }
 
-    function createAlert(cell) {
+    function createAlert(cell, bob) {
       alert( 
         'This is an alert with basic formatting\n\n'
+        + 'Event number ' + bob + ' clicked,\n'
+        + '\tIn cell #' + cell.cellIndex + '\n\n'
         + 'Calendar stuff may go here or somewhere else?\n\n'
         + "\t- list item 1\n"
         + '\t- list item 2\n'
@@ -220,11 +222,13 @@ our My Calendar page. -->
         var o = items[i].style;
         o.fontSize = 14;
         o.borderStyle = "solid";
-        o.borderWidth = 2;
+        // o.borderWidth = "3px";
         o.borderRadius = "5px";
         o.background = "#FA5882";
         o.textAlign = "center";
-        o.marginBottom = 1;
+        o.paddingTop = "2px";
+        o.paddingBottom = "2px";
+        if (i != items.length-1) o.marginBottom = "2px";
       }
     }
 
