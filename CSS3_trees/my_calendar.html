@@ -135,18 +135,18 @@ our My Calendar page. -->
       column[1].style.background = color;
     }
 
-    function updateTableTitles() {
-      var dayOfMonth = today.getDate();
+    // function updateTableTitles() {
+    //   var dayOfMonth = today.getDate();
 
-      var firstCalDay1 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth-dayIndex);
-      var firstCalDay2 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth+6-dayIndex);
+    //   var firstCalDay1 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth-dayIndex);
+    //   var firstCalDay2 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth+6-dayIndex);
 
-      var secondCalDay1 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth+7-dayIndex);
-      var secondCalDay2 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth+13-dayIndex);
+    //   var secondCalDay1 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth+7-dayIndex);
+    //   var secondCalDay2 = new Date(today.getFullYear(), today.getMonth(), dayOfMonth+13-dayIndex);
 
-      title1.innerHTML += getMessage(firstCalDay1, firstCalDay2);
-      title2.innerHTML += getMessage(secondCalDay1, secondCalDay2);
-    }
+    //   title1.innerHTML += getMessage(firstCalDay1, firstCalDay2);
+    //   title2.innerHTML += getMessage(secondCalDay1, secondCalDay2);
+    // }
 
     function getMessage(date1, date2) {
       var m1 = date1.getMonth()+1;
@@ -156,13 +156,6 @@ our My Calendar page. -->
 
       return (" ("+m1+"/"+d1+" - "+m2+"/"+d2+")");
     }
-
-    // function getFirstDay(dayNumber) {
-    //   var firstRem = dayNumber - dayIndex;
-    //   if (firstRem <= 0) {
-
-    //   }
-    // }
 
     function testAddData() {
       table1 = document.getElementsByClassName("calendar")[0];
@@ -219,10 +212,26 @@ our My Calendar page. -->
     }
 
     function showPreviousWeeks() {
-      if (weekIndex != 0) {
+      if (weekIndex) { // weekIndex != 0 true
         --weekIndex;
         setCalText();
+
+        // if weekIndex == 0, !weekIndex is true
+        if (!weekIndex) {
+          disablePrevWeekButton();
+        }
+
       } else console.log('cannot look back in time on this page');
+    }
+
+    function disablePrevWeekButton() {
+      button = document.getElementById('button-prev');
+      button.disabled = true;
+    }
+
+    function checkEnablePrevWeekButton() {
+      button = document.getElementById('button-prev');
+      if (button.disabled) button.disabled = false;
     }
 
     function setCalText() {
@@ -246,13 +255,15 @@ our My Calendar page. -->
     }
 
     function showNextWeeks() {
+      checkEnablePrevWeekButton();
       ++weekIndex;
       setCalText();
     }
 
     setColStyle(column,"#74DF00");
-    updateTableTitles();
+    setCalText();
     testAddData();
+    disablePrevWeekButton();
   </script>
   <!-- javascript at the bottom for fast page loading -->
   <script type="text/javascript" src="js/jquery.js"></script>
