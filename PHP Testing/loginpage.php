@@ -12,8 +12,15 @@
 		echo 'Error: Database connection. Try again later.';
 		exit;
 	}
-	
+	$username = "";
 	session_start();
+	if(isset($_SESSION['login_active'])) {
+		$username = $_SESSION['username'];
+		echo '<div class="userinfo">';
+		echo "<p>Welcome, ".$username."\t";
+		echo '<a href="logout.php">Logout</a></p>';
+		echo '</div>';
+	}
 ?>
 
 <h1>Login</h1>
