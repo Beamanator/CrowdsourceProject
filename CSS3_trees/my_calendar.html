@@ -31,6 +31,23 @@ our My Calendar page. -->
             <li><a href="examples.html">Examples</a></li>
             <li><a href="my_calendar.html">My Calendar</a></li>
             <li><a href="about_us.html">About Us</a></li>
+            <li><a href="#">Example Drop Down</a>
+              <ul>
+                <li><a href="#">Drop Down One</a></li>
+                <li><a href="#">Drop Down Two</a>
+                  <ul>
+                    <li><a href="#">Sub Drop Down One</a></li>
+                    <li><a href="#">Sub Drop Down Two</a></li>
+                    <li><a href="#">Sub Drop Down Three</a></li>
+                    <li><a href="#">Sub Drop Down Four</a></li>
+                    <li><a href="#">Sub Drop Down Five</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down Three</a></li>
+                <li><a href="#">Drop Down Four</a></li>
+                <li><a href="#">Drop Down Five</a></li>
+              </ul>
+            </li>
             <li><a href="contact.php">Contact Us</a></li>
           </ul>
         </div>
@@ -45,9 +62,9 @@ our My Calendar page. -->
           <p>2013 sees the redesign of our website. <a href="#">Read more</a></p>
         </div>
         <div class="sidebar">
-          <h3>New Events</h3>
+          <h3>Useful Links</h3>
           <ul>
-            <li><a href="#">Event 1</a></li>
+            <li><a href="#">First Link</a></li>
             <li><a href="#">Another Link</a></li>
             <li><a href="#">And Another</a></li>
             <li><a href="#">Last One</a></li>
@@ -57,8 +74,8 @@ our My Calendar page. -->
       <div class="content">
         <h1>My Calendar</h1>
         <div class="button-div">
-          <button type="button" id="button-prev" onclick="showPreviousWeeks()">Show Previous 2 Weeks</button>
-          <button type="button" id="button-next" onclick="showNextWeeks()">Show Next 2 Weeks</button>
+          <button type="button" id="button-prev">Show Previous 2 Weeks</button>
+          <button type="button" id="button-next">Show Next 2 Weeks</button>
         </div>
 
         <div class="container">
@@ -127,9 +144,6 @@ our My Calendar page. -->
     var title1 = document.getElementById("this-week-table-title");
     var title2 = document.getElementById("next-week-table-title");
 
-    // So that you can't look back in time on the calendar... Only in "past events" page
-    var weekIndex = 0;
-
     function setColStyle(column, color) {
       column[0].style.background = color;
       column[1].style.background = color;
@@ -157,12 +171,12 @@ our My Calendar page. -->
       return (" ("+m1+"/"+d1+" - "+m2+"/"+d2+")");
     }
 
-    // function getFirstDay(dayNumber) {
-    //   var firstRem = dayNumber - dayIndex;
-    //   if (firstRem <= 0) {
+    function getFirstDay(dayNumber) {
+      var firstRem = dayNumber - dayIndex;
+      if (firstRem <= 0) {
 
-    //   }
-    // }
+      }
+    }
 
     function testAddData() {
       table1 = document.getElementsByClassName("calendar")[0];
@@ -216,38 +230,6 @@ our My Calendar page. -->
         o.paddingBottom = "2px";
         if (i != items.length-1) o.marginBottom = "2px";
       }
-    }
-
-    function showPreviousWeeks() {
-      if (weekIndex != 0) {
-        --weekIndex;
-        setCalText();
-      } else console.log('cannot look back in time on this page');
-    }
-
-    function setCalText() {
-      var Y = today.getFullYear();
-      var M = today.getMonth();
-      var D = today.getDate();
-
-      var m1 = title1.innerHTML.split('(')[0]; //--> "Events This Week "
-      var m2 = title2.innerHTML.split('(')[0]; //--> "Events Next Week "
-
-      var firstWeek1 = new Date(Y, M, D-dayIndex+(weekIndex*14));
-      var firstWeek2 = new Date(Y, M, D-dayIndex+6+(weekIndex*14));
-
-      var secondWeek1 = new Date(Y, M, D-dayIndex+7+(weekIndex*14));
-      var secondWeek2 = new Date(Y, M, D-dayIndex+13+(weekIndex*14));
-
-      title1.innerHTML = (m1 + getMessage(firstWeek1, firstWeek2));
-      title2.innerHTML = (m2 + getMessage(secondWeek1, secondWeek2));
-
-      //console.log(firstWeek1, firstWeek2, secondWeek1, secondWeek2);
-    }
-
-    function showNextWeeks() {
-      ++weekIndex;
-      setCalText();
     }
 
     setColStyle(column,"#74DF00");

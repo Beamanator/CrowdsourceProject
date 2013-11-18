@@ -30,10 +30,10 @@
 	$db->query($query);
 	
 	// Insert event
-	$query = "insert into events (name, date, time, location) values (?, ?, ?, ?)";
+	/*$query = "insert into events (name, date, time, location) values (?, ?, ?, ?)";
 	$stmt = $db->prepare($query);
 	$stmt->bind_param("ssss", $name, $date, $time, $loc);
-	$stmt->execute();
+	$stmt->execute();*/
 	
 	echo "<p>Name: ".$name."<br>";
 	echo "Date: ".$date."<br>";
